@@ -76,100 +76,73 @@ A linguagem **SIMPLE** é composta por instruções numeradas em **ordem crescen
 
 ---
 
-🔹 Exemplos
-50 rem isto é um comentário
-30 input x
-80 let u = j - 56
-10 print w
-70 goto 45
-35 if i == z goto 80
-99 end
+### Operadores relacionais (if/goto)
 
-🔹 Operadores Relacionais (if/goto)
+>   maior que
+>=  maior ou igual
+<   menor que
+<=  menor ou igual
+==  igual
+!=  diferente
 
-> maior que
+---
 
->= maior ou igual
-
-< menor que
-
-<= menor ou igual
-
-== igual
-
-!= diferente
-
-🖥️ Simpletron Machine Language (SML)
+### Simpletron Machine Language (SML)
 
 O Simpletron é uma máquina virtual simples, porém poderosa, que executa programas escritos em SML.
 
-🔹 Estrutura do Simpletron
+# Estrutura do Simpletron
 
-Memória
+Memória: 100 palavras (00 a 99)
 
-100 palavras endereçadas de 00 a 99
-
-Palavra
-
+Palavra:
 Número decimal de 4 dígitos com sinal
+Ex: +3364, -0001
 
-Exemplos:
-
-+3364
-
--0001
-
-Acumulador
-
+Acumulador:
 Registrador especial usado em operações aritméticas e lógicas
+O programa sempre inicia na posição 00 da memória
 
-📍 O programa sempre inicia na posição 00 da memória
+# Instruções SML
 
-🔹 Instruções SML
-
-Cada instrução ocupa uma palavra de memória e é composta por:
+Cada instrução SML ocupa uma palavra de memória e possui:
 
 2 primeiros dígitos → código de operação
-
 2 últimos dígitos → endereço de memória
 
-📜 Códigos de Operação da SML
+## Códigos de Operação da SML
 
-A Simpletron Machine Language (SML) utiliza códigos de operação de dois dígitos para definir o comportamento de cada instrução.
+Operações de Entrada e Saída
 
-🔹 Operações de Entrada e Saída
+| Código	| Operação	| Descrição |
+|-----------|-----------|-----------|
+|10	| READ	| Lê uma palavra do teclado|
+|11	| WRITE	| Escreve uma palavra na tela|
 
-10 READ → Lê uma palavra do teclado para uma posição da memória
+Operações de Carga e Armazenamento
+| Código	| Operação	| Descrição |
+|-----------|-----------|-----------|
+|  20	|  LOAD	| Carrega valor da memória no acumulador|
+| 21	| STORE	| Armazena o valor do acumulador na memória|
 
-11 WRITE → Escreve na tela uma palavra armazenada na memória
+Operações Aritméticas
+| Código	| Operação	| Descrição |
+|-----------|-----------|-----------|
+| 30	| ADD	| Soma uma palavra da memória ao acumulador|
+| 31	| SUBTRACT	| Subtrai uma palavra da memória do acumulador|
+| 32	| DIVIDE	| Divide o acumulador por uma palavra da memória|
+| 33	| MULTIPLY	| Multiplica uma palavra da memória pelo acumulador|
+| 34	| MODULE	| Calcula o resto da divisão|
 
-🔹 Operações de Carga e Armazenamento
+### Operações de Controle de Fluxo
 
-20 LOAD → Carrega uma palavra da memória para o acumulador
-
-21 STORE → Armazena o valor do acumulador em uma posição da memória
-
-🔹 Operações Aritméticas
-
-30 ADD → Soma uma palavra da memória ao acumulador
-
-31 SUBTRACT → Subtrai uma palavra da memória do acumulador
-
-32 DIVIDE → Divide o acumulador por uma palavra da memória
-
-33 MULTIPLY → Multiplica o acumulador por uma palavra da memória
-
-34 MODULE → Calcula o resto da divisão
-
-🔹 Operações de Controle de Fluxo
-
-40 BRANCH → Desvio incondicional para uma posição da memória
-
-41 BRANCHNEG → Desvio se o acumulador for negativo
-
-42 BRANCHZERO → Desvio se o acumulador for zero
-
-43 HALT → Finaliza a execução do programa
+Operações Aritméticas
+| Código	| Operação	| Descrição |
+|-----------|-----------|-----------|
+| 40	| BRANCH	| Desvio incondicional para um endereço de memória|
+| 41	| BRANCHNEG	| Desvio se o acumulador for negativo|
+| 42	| BRANCHZERO	| Desvio se o acumulador for zero|
+| 43	| HALT	| Finaliza a execução do programa|
 
 ### Objetivo do Projeto
 
